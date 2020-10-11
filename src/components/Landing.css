@@ -16,8 +16,17 @@
     margin-top: 10%;
 }
 
+#sButton {
+    margin: 2%;
+}
+
 #headerText {
     margin: 5%;
+    color: gray
+}
+
+#results {
+    margin: 2%;
     color: gray
 }
 

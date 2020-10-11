@@ -12,8 +12,8 @@ function App() {
     <div className="App">
       <Router history={history}>
         <Switch>
-          {/* <Route exact path="/" component={Landing} /> */}
-          <Route exact path="/" component={Profile} />
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/profile" component={Profile} />
         </Switch>
       </Router>
     </div>

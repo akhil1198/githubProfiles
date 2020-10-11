@@ -11,12 +11,7 @@ function Profile(props) {
                 <div className="main">
                     <div className="paper">
                         <Paper elevation={0}>
-                            <div>
-                                {/* <Header /> */}
-                            </div>
-                            <div className='body'>
-                                {/* <Body /> */}
-                            </div>
+                            profile
                         </Paper>
                     </div>
                 </div>
