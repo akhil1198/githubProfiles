@@ -1,0 +1,43 @@
+.main{
+    background-color: silver;
+    color: white;
+    height: fit-content;
+}
+
+.paper {
+    max-height: 100%;
+}
+
+.header {
+    margin-top: 5%;
+}
+
+.body {
+}
+
+#sButton {
+    margin: 2%;
+}
+
+#headerText {
+    margin: 5%;
+    color: gray
+}
+
+#results {
+    margin: 2%;
+    color: gray
+}
+
+#searchbar {
+    width: 50%;
+    margin-left: 25%;
+
+}
+
+@media(max-width: 455px){
+    #searchbar{
+        margin-left: 15%;
+        width: 75%;
+    }
+}
