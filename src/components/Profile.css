@@ -1,0 +1,30 @@
+.header{
+    height: 40%;
+    margin: 5%;
+    padding: 5%;
+    background-color: lightgrey;
+}
+
+.name{
+
+}
+
+.picture{
+    width: 20%;
+    height: 20%;
+}
+
+.body{
+    height: 60%;
+}
+
+.bio{
+}
+
+@media(max-width:600px){
+    .picture{
+        width: 30%;
+        height: 30%;
+        float: left;
+    }
+}

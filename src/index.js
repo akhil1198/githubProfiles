@@ -13,9 +13,6 @@ const theme = createMuiTheme({                          //creating global UI set
   },
   typography: {
     fontFamily: 'Roboto, sans-serif',
-    button: {
-      textTransform: 'none',
-    },
   },
 });
 

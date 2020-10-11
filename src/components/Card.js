@@ -18,12 +18,12 @@ function Profilecard(props) {
     }
 
     return (
-        <div style={{ margin: "3%"}}>
-            <Card>
+        <div style={{ margin: "3%" }}>
+            <Card style={{ maxWidth: "100%" }}>
                 <CardHeader
                     avatar={
-                        <Avatar aria-label="recipe">
-                            <img src={props.avatar} alt="img" />
+                        <Avatar variant="rounded">
+                            <img src={props.avatar} alt="img" style={{ height: "100%", width: "100%" }} />
                         </Avatar>
                     }
                     action={
@@ -37,19 +37,28 @@ function Profilecard(props) {
                 />
 
                 <CardContent>
+                    <Typography variant="h5">
+                        I am a developer working on the MERN stack and looking for full time opportunities
+                    </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        This impressive paella is a perfect party dish and a fun meal to cook together with your
-                        guests
+                        {props.gitlink}
                     </Typography>
                 </CardContent>
                 <center>
-                    <Link to="/profile">
+                    <Link to={{
+                        pathname: `/profile`,
+                        state: {
+                            avatar: props.avatar,
+                            name: props.name
+                        }
+                    }}>
                         <Button size="small" style={{ margin: "3%" }} >View Profile</Button>
+
                     </Link>
                 </center>
 
             </Card>
-        </div>
+        </div >
     );
 }
 

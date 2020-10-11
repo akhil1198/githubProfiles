@@ -136,12 +136,12 @@ export default function Landing() {
 
 
                             {loading === true ?
-                                <CircularProgress />
+                                <CircularProgress style={{ marginLeft: "50%" }} />
                                 :
                                 userData.map((details) => {
                                     return (
                                         <Grid container item >
-                                            <Profilecard avatar={details.avatar_url} name={details.login} />
+                                            <Profilecard avatar={details.avatar_url} name={details.login} gitlink={details.html_url} />
                                         </Grid>
                                     )
                                 })
@@ -171,17 +171,17 @@ export default function Landing() {
             return (
                 <div className={classes.root}>
                     <center>
-                        <Grid container spacing={1}>
+                        <Grid container spacing={1} justify="center">
                             <Grid container item xs={6} spacing={12}>
 
 
                                 {loading === true ?
-                                    <CircularProgress />
+                                    <CircularProgress style={{ marginLeft: "50%" }} />
                                     :
                                     userData.map((details) => {
                                         return (
                                             <Grid container item xs={6} spacing={12}>
-                                                <Profilecard avatar={details.avatar_url} name={details.login} />
+                                                <Profilecard avatar={details.avatar_url} name={details.login} gitlink={details.html_url} />
                                             </Grid>
                                         )
                                     })
@@ -218,12 +218,10 @@ export default function Landing() {
             <Container spacing={3}>
                 <div className="main">
                     <div className="paper">
-                        <Paper elevation={0}>
+                        <Paper elevation={2} style={{ padding: "2%", marginTop: "5%"}}>
                             <div>
                                 <div className="header">
                                     <Typography variant="h4" id="headerText" ><GitHubIcon style={{ fontSize: 40, marginRight: "1%", color: "black" }} />GitHub Profile Viewer</Typography>
-                                </div>
-                                <div>
                                     <form onSubmit={handleSearch}>
                                         <AppBar position="static" id="searchbar">
                                             <Toolbar>
@@ -241,9 +239,7 @@ export default function Landing() {
                                                 />
                                             </Toolbar>
                                         </AppBar>
-                                        <Button variant="contained" color="primary" type="submit" id="sButton" onClick={handleSearch}>
-                                            Search
-                                        </Button>
+                                       
 
                                         {totalResults ?
                                             <Typography variant="h5" id="results" >Total Results : {totalResults}</Typography>
@@ -252,8 +248,11 @@ export default function Landing() {
                                         }
                                     </form>
                                 </div>
+                                <div>
+
+                                </div>
                             </div>
-                            <div className='body'>
+                            <div >
                                 {BreakpointHelper()}
                             </div>
                         </Paper>
