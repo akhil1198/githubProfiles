@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+//package imports
+import { Link } from 'react-router-dom';
 
 //material-ui imports
 import Avatar from '@material-ui/core/Avatar';
@@ -6,16 +9,10 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import IconButton from '@material-ui/core/IconButton';
-import { Typography, CardActions, Button } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { Typography, Button } from '@material-ui/core';
 
 
 function Profilecard(props) {
-    const [open, setOpen] = useState(false)
-
-    if (open) {
-        return <Profilecard />
-    }
 
     return (
         <div style={{ margin: "3%" }}>
@@ -49,7 +46,8 @@ function Profilecard(props) {
                         pathname: `/profile`,
                         state: {
                             avatar: props.avatar,
-                            name: props.name
+                            name: props.name,
+                            gitlink: props.gitlink
                         }
                     }}>
                         <Button size="small" style={{ margin: "3%" }} >View Profile</Button>

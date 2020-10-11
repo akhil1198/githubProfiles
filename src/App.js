@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
-import { createBrowserHistory } from 'history';
-import { Router, Switch, Route } from 'react-router-dom'
 import Landing from './components/Landing';
 import Profile from './components/Profile';
 
-const history = createBrowserHistory();
+//package imports
+import { createBrowserHistory } from 'history';
+import { Router, Switch, Route } from 'react-router-dom'
+
+const history = createBrowserHistory();           //create browser history is used to manage the browser page navigation on clicking the previous and next buttons on the browser
 
 function App() {
   return (

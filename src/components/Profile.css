@@ -21,6 +21,10 @@
 .bio{
 }
 
+.link{
+    margin: 1%;
+}
+
 @media(max-width:600px){
     .picture{
         width: 30%;

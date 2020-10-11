@@ -3,9 +3,9 @@ import './Landing.css'
 import Profilecard from './Card';
 
 //material-ui imports
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import { Container, Box, Button, CircularProgress } from '@material-ui/core';
+import { Container, CircularProgress } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import SearchIcon from '@material-ui/icons/Search';
@@ -13,12 +13,7 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Avatar from '@material-ui/core/Avatar';
-import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardContent from '@material-ui/core/CardContent';
-import IconButton from '@material-ui/core/IconButton';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 //package imports
@@ -70,11 +65,6 @@ export default function Landing() {
     const classes = useStyles();
     const [searchquery, setSearchquery] = useState('')
     const [userData, setUserData] = useState([])
-    const [avatar, setAvatar] = useState()
-    const [name, setName] = useState()
-    const [gitlink, setGitlink] = useState()
-    const [followers, setFollowers] = useState()
-    const [following, setFollowing] = useState()
     const [totalResults, setTotalResults] = useState()
     const [loading, setLoading] = useState(false)
 
@@ -86,28 +76,12 @@ export default function Landing() {
     const handleSearch = (e) => {
         e.preventDefault()
         setLoading(true)
-        const url = `https://api.github.com/search/users?q=${searchquery}&sort=starts&order=desc`
+        const url = `https://api.github.com/search/users?q=${searchquery}&sort=starts&order=desc`       //making api calls to github to fetch user information here
         axios
             .get(url)
             .then(response => {
-                // setLoading(true)
                 console.log(response)
-                setTotalResults(response.data.total_count)
-                let users = []
-
-
-                // response.data.items.forEach((data) => {
-                //     // console.log(data)
-                //     // setName(data.login)
-                //     // setAvatar(data.avatar_url)
-                //     // setGitlink(data.html_url)
-
-                //     console.log(data)
-                //     setLoading(false)
-                //     users.push(data)
-                // })
-                // setUserData(users)
-
+                setTotalResults(response.data.total_count)                      //setting data to states
                 setUserData(response.data.items)
                 setLoading(false)
             })
@@ -116,19 +90,10 @@ export default function Landing() {
             })
     }
 
-    console.log(userData)
-    // console.log(totalResults)
-
-
-
-    // const matches = useMediaQuery("(min-width:450px)");
-
     const BreakpointHelper = () => {                                            //this is a breakpoint helper function which is triggered when the screen size is below the mentioned size of 450px
-        const theme = useTheme();
-        // const matches = useMediaQuery(theme.breakpoints.up("sm"));              //threme.breakpoints.up("sm") is creating the breakpoint based upon the helpers set by materialUI so anything that is greated than sm which has a predefined size of 600px then it will render for bigger screen sizes
-        const matches = useMediaQuery("(max-width:600px)");
+        const matches = useMediaQuery("(max-width:600px)");                     //the useMediaQuery is used to check if the screen size is dropping below or increasing above the specified px 
 
-        if (matches) {                              //below 600px
+        if (matches) {                              //if the screen size drops to below 600px then the following will be rendered 
             return (
                 <div className={classes.root}>
                     <Grid container spacing={1}>
@@ -145,29 +110,13 @@ export default function Landing() {
                                         </Grid>
                                     )
                                 })
-                                // userData.map((details) => {
-                                //     console.log(details)
-                                // })
-                                // console.log(typeof(userData))
-                                // <Grid container item xs={6} spacing={12}>
-                                //      <Profilecard data={userData} />
-                                // </Grid>
-
-                                // userData.forEach((data) => {
-                                //     console.log(data)
-                                //     return (
-                                //         <Profilecard data={data} />
-                                //     )
-                                // })
-
                             }
                         </Grid>
 
                     </Grid>
                 </div>
-
             )
-        } else {                                        //above 600px
+        } else {                                        //if the screen size increases above 600px then the following will be loaded
             return (
                 <div className={classes.root}>
                     <center>
@@ -185,21 +134,6 @@ export default function Landing() {
                                             </Grid>
                                         )
                                     })
-                                    // userData.map((details) => {
-                                    //     console.log(details)
-                                    // })
-                                    // console.log(typeof(userData))
-                                    // <Grid container item xs={6} spacing={12}>
-                                    //      <Profilecard data={userData} />
-                                    // </Grid>
-
-                                    // userData.forEach((data) => {
-                                    //     console.log(data)
-                                    //     return (
-                                    //         <Profilecard data={data} />
-                                    //     )
-                                    // })
-
                                 }
                             </Grid>
 
@@ -208,11 +142,9 @@ export default function Landing() {
                 </div>
             )
         }
-        return <></>;
     };
 
 
-    //MOVE THE HEADER AND THE BODY COMPONENTS TO THIS FILE AND MAKE A DIFF COMPONOENT FOR THE PROFILE CARDS TO BE DISPLAYED SINCE ITS REUSABLE
     return (
         <div>
             <Container spacing={3}>
