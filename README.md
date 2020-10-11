@@ -1,5 +1,5 @@
 # githubProfiles
-A github profile viewer of different users build with ReactJS
+A github profile viewer of different users built with ReactJS
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
