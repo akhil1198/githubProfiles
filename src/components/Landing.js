@@ -69,7 +69,6 @@ export default function Landing() {
     const [loading, setLoading] = useState(false)
 
     const onChange = (e) => {
-        console.log(e.target.value)
         setSearchquery(e.target.value)
     }
 
@@ -90,6 +89,7 @@ export default function Landing() {
             })
     }
 
+
     const BreakpointHelper = () => {                                            //this is a breakpoint helper function which is triggered when the screen size is below the mentioned size of 450px
         const matches = useMediaQuery("(max-width:600px)");                     //the useMediaQuery is used to check if the screen size is dropping below or increasing above the specified px 
 
@@ -98,8 +98,6 @@ export default function Landing() {
                 <div className={classes.root}>
                     <Grid container spacing={1}>
                         <Grid container item >
-
-
                             {loading === true ?
                                 <CircularProgress style={{ marginLeft: "50%" }} />
                                 :
@@ -112,7 +110,6 @@ export default function Landing() {
                                 })
                             }
                         </Grid>
-
                     </Grid>
                 </div>
             )
@@ -122,8 +119,6 @@ export default function Landing() {
                     <center>
                         <Grid container spacing={1} justify="center">
                             <Grid container item xs={6} spacing={12}>
-
-
                                 {loading === true ?
                                     <CircularProgress style={{ marginLeft: "50%" }} />
                                     :
@@ -136,7 +131,6 @@ export default function Landing() {
                                     })
                                 }
                             </Grid>
-
                         </Grid>
                     </center>
                 </div>
@@ -171,17 +165,12 @@ export default function Landing() {
                                                 />
                                             </Toolbar>
                                         </AppBar>
-                                       
-
                                         {totalResults ?
                                             <Typography variant="h5" id="results" >Total Results : {totalResults}</Typography>
                                             :
                                             null
                                         }
                                     </form>
-                                </div>
-                                <div>
-
                                 </div>
                             </div>
                             <div >

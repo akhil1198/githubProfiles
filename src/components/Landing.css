@@ -21,7 +21,8 @@
 
 #headerText {
     margin: 5%;
-    color: gray
+    color: gray;
+    font-size: 40px;
 }
 
 #results {
@@ -35,9 +36,17 @@
 
 }
 
-@media(max-width: 455px){
+@media(max-width: 600px){
+
+    #headerText {
+        margin: 5%;
+        color: gray;
+        font-size: 30px;
+    }
+
     #searchbar{
-        margin-left: 15%;
-        width: 75%;
+        margin-left: 10%;
+        width: 80%;
     }
 }
+

@@ -21,14 +21,14 @@ function Profile(props) {
                 <Paper elevation={2} style={{ padding: "3%" }}>
                     <div className="header">
                         <img src={props.location.state.avatar} alt="profile pic" className="picture" />
-                        <Typography variant="h2" className="name" >{props.location.state.name}</Typography>
-                        <Typography variant="h5" className="name" >@{props.location.state.name}</Typography>
-                        <Typography variant="h6" style={{ margin: "1%" }}>{props.location.state.gitlink}</Typography>
+                        <Typography  id="name" >{props.location.state.name}</Typography>
+                        <Typography id="username" >@{props.location.state.name}</Typography>
+                        <Typography variant="h6" style={{ margin: "1%" }}><a href={props.location.state.gitlink} target="_blank">{props.location.state.gitlink}</a></Typography>
                     </div>
                     <div className="body">
-                        <Typography variant="h3" >{props.location.state.name}'s Bio</Typography>
-                        <div className="bio">
-                            <Typography variant="h5">
+                        <Typography id="bio" >Bio</Typography>
+                        <div>
+                            <Typography id="details">
                                 I am a developer working on the MERN stack and looking for full time opportunities
                             </Typography>
                         </div>

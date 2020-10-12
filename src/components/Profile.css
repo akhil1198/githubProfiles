@@ -5,8 +5,20 @@
     background-color: lightgrey;
 }
 
-.name{
+#name{
+    font-size: 45px;
+}
 
+#username{
+    font-size: 20px;
+}
+
+#bio{
+    font-size: 35px;
+}
+
+#details{
+    font-size: 30px;
 }
 
 .picture{
@@ -26,6 +38,22 @@
 }
 
 @media(max-width:600px){
+    #name{
+        font-size: 25px;
+    }
+
+    #username{
+        font-size: 15px;
+    }
+
+    #bio{
+        font-size: 25px;
+    }
+
+    #details{
+        font-size: 18px;
+    }
+    
     .picture{
         width: 30%;
         height: 30%;

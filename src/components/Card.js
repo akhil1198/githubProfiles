@@ -8,7 +8,6 @@ import Avatar from '@material-ui/core/Avatar';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
-import IconButton from '@material-ui/core/IconButton';
 import { Typography, Button } from '@material-ui/core';
 
 
@@ -23,16 +22,11 @@ function Profilecard(props) {
                             <img src={props.avatar} alt="img" style={{ height: "100%", width: "100%" }} />
                         </Avatar>
                     }
-                    action={
-                        <IconButton aria-label="settings">
-                        </IconButton>
-                    }
 
                     title={<Typography variant="h5" component="h2" style={{ marginLeft: "-10%" }}>
                         {props.name}
                     </Typography>}
                 />
-
                 <CardContent>
                     <Typography variant="h5">
                         I am a developer working on the MERN stack and looking for full time opportunities
@@ -51,10 +45,8 @@ function Profilecard(props) {
                         }
                     }}>
                         <Button size="small" style={{ margin: "3%" }} >View Profile</Button>
-
                     </Link>
                 </center>
-
             </Card>
         </div >
     );
