@@ -1,6 +1,6 @@
 # githubProfiles
 A github profile viewer of different users built with ReactJS.<br />
-Access this project at [githubprofiles.surge.sh](githubprofiles.surge.sh)
+Access this project at [githubprofiles.surge.sh](www.githubprofiles.surge.sh)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
